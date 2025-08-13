@@ -1,0 +1,109 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Untuk Sekar</title>
+  <style>
+    body {
+      background: #fddde6;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }.envelope {
+      width: 300px;
+      height: 180px;
+      background: #ff4d6d;
+      border-radius: 10px 10px 0 0;
+      margin: 0 auto;
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }.flap {
+      width: 0; 
+      height: 0;
+      border-style: solid;
+      border-width: 0 150px 100px 150px;
+      border-color: transparent transparent #ff7a91 transparent;
+      position: absolute;
+      top: -100px;
+      left: 0;
+      transform-origin: top center;
+      transition: transform 0.8s ease;
+    }.envelope.open.flap {
+      transform: rotateX(180deg);
+    }.love {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 28px;
+      color: #fff;
+      font-weight: bold;
+      transform: translate(-50%, -50%);
+      user-select: none;
+    }.envelope.open.love {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }.message {
+      display: none;
+      font-size: 32px;
+      color: #e60039;
+      margin-top: 20px;
+      font-weight: bold;
+    }.envelope.open +.message {
+      display: block;
+      animation: fadein 1s ease forwards;
+    }
+    @keyframes fadein {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }.foto {
+      display: none;
+      margin-top: 30px;
+      max-width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }.envelope.open ~.foto {
+      display: block;
+      animation: fadein 1s ease forwards;
+    }.bubu-dudu {
+      margin-top: 30px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #ff4d6d;
+      animation: dance 1.2s infinite;
+      user-select: none;
+    }
+    @keyframes dance {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(10deg); }
+      50% { transform: rotate(0deg) scale(1.1); }
+      75% { transform: rotate(-10deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Untuk Sekar ❤️</h1>
+  
+  <div class="envelope" id="envelope">
+    <div class="flap"></div>
+    <div class="love">I love you 💖</div>
+  </div>
+  
+  <div class="message">I love you</div>
+  
+  <div class="bubu-dudu">bubu dudu, bubu dudu... 🎶</div>
+  
+  <img src="https://ppl-ai-file-upload.s3.amazonaws.com/ask-perplexity/whatsapp_uploads/6283153366670/4e6c3059-1f4f-49d6-ac4c-22de76861a08.jpg" alt="Foto Sekar" class="foto">
+
+  <script>
+    document.getElementById('envelope').addEventListener('click', function(){
+      this.classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>
+```
